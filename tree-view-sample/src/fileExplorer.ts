@@ -291,7 +291,8 @@ export class FileSystemProvider implements vscode.TreeDataProvider<Entry>, vscod
 			treeItem.command = { command: 'fileExplorer.openFile', title: "Open File", arguments: [element.uri], };
 			treeItem.contextValue = 'file';
 		}
-		return treeItem;
+		treeItem.iconPath = new vscode.ThemeIcon('sync~spin');
+		return treeItem;		
 	}
 }
 
